@@ -1,0 +1,591 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>San Gabriel Summit Dental - Family Dentistry in Burbank, CA</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #f8f8f6;
+            background-color: #000000;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        header {
+            background: linear-gradient(135deg, #000000 0%, #3d2f26 100%);
+            color: #f8f8f6;
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .logo {
+            font-family: 'Copperplate', 'Copperplate Gothic Light', fantasy;
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: #d4af37;
+            text-decoration: none;
+            letter-spacing: 1px;
+        }
+
+        .contact-info {
+            text-align: right;
+            font-size: 0.9rem;
+        }
+
+        .phone {
+            font-size: 1.1rem;
+            font-weight: bold;
+            margin-bottom: 0.2rem;
+        }
+
+        nav {
+            background-color: rgba(255,255,255,0.1);
+            padding: 0.5rem 0;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .nav-links a {
+            color: #f8f8f6;
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            transition: all 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            background-color: #d4af37;
+            color: #000000;
+        }
+
+        .hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(61, 47, 38, 0.8));
+            background-size: cover;
+            background-position: center;
+            color: #f8f8f6;
+            text-align: center;
+            padding: 4rem 0;
+        }
+
+        .hero h1 {
+            font-family: 'Copperplate', 'Copperplate Gothic Light', fantasy;
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            letter-spacing: 2px;
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: linear-gradient(135deg, #d4af37 0%, #b8941f 100%);
+            color: #000000;
+            padding: 1rem 2rem;
+            text-decoration: none;
+            border-radius: 30px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
+        }
+
+        .cta-button:hover {
+            background: linear-gradient(135deg, #b8941f 0%, #d4af37 100%);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(212, 175, 55, 0.5);
+        }
+
+        .services {
+            padding: 4rem 0;
+            background-color: #3d2f26;
+        }
+
+        .section-title {
+            font-family: 'Copperplate', 'Copperplate Gothic Light', fantasy;
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            color: #d4af37;
+            letter-spacing: 1.5px;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .service-card {
+            background: #000000;
+            padding: 2rem;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 1px solid #5a453a;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(212, 175, 55, 0.2);
+            border: 1px solid #d4af37;
+        }
+
+        .service-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, #000000, #3d2f26);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1rem;
+            font-size: 1.5rem;
+            color: #d4af37;
+            border: 2px solid #d4af37;
+        }
+
+        .service-card h3 {
+            font-family: 'Copperplate', 'Copperplate Gothic Light', fantasy;
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+            color: #d4af37;
+            letter-spacing: 1px;
+        }
+
+        .reviews {
+            padding: 4rem 0;
+            background-color: #000000;
+        }
+
+        .reviews-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .review-card {
+            flex: 0 0 350px;
+            max-width: 350px;
+            background: #3d2f26;
+            padding: 2rem;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+            transition: transform 0.3s ease, box-shadow 0.3s ease, border 0.3s ease;
+            border: 1px solid #5a453a;
+        }
+
+        .review-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(212, 175, 55, 0.2);
+            border: 1px solid #d4af37;
+        }
+
+        .stars {
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+            color: #d4af37;
+        }
+
+        .review-card p {
+            font-size: 1.1rem;
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+            color: #f8f8f6;
+            font-style: italic;
+        }
+
+        .reviewer {
+            font-weight: bold;
+            color: #d4af37;
+            font-size: 1rem;
+            letter-spacing: 1px;
+        }
+
+        .about {
+            padding: 4rem 0;
+            background-color: #3d2f26;
+        }
+
+        .about-content {
+            display: flex;
+            flex-direction: column;
+            gap: 3rem;
+            align-items: center;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .about-text {
+            text-align: center;
+            width: 100%;
+        }
+
+        .about-doctor {
+            text-align: left;
+        }
+
+        .about-text h2 {
+            font-family: 'Copperplate', 'Copperplate Gothic Light', fantasy;
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            color: #d4af37;
+            letter-spacing: 1.5px;
+        }
+
+        .about-text p {
+            font-size: 1.1rem;
+            margin-bottom: 1.5rem;
+            color: #f8f8f6;
+        }
+
+        .about-image {
+            background: linear-gradient(135deg, #3d2f26, #5a453a);
+            height: 300px;
+            width: 400px;
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+            color: #d4af37;
+            border: 2px solid #d4af37;
+        }
+
+        .dental-office-image {
+            background: linear-gradient(135deg, #3d2f26, #5a453a);
+            height: 300px;
+            width: 400px;
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            color: #d4af37;
+            border: 2px solid #d4af37;
+            text-align: center;
+            padding: 1rem;
+        }
+
+        .contact {
+            padding: 4rem 0;
+            background-color: #000000;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .contact-info h3 {
+            font-family: 'Copperplate', 'Copperplate Gothic Light', fantasy;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: #d4af37;
+            letter-spacing: 1px;
+        }
+
+        .contact-item {
+            margin-bottom: 1.5rem;
+            padding: 1rem;
+            background-color: #3d2f26;
+            border-radius: 10px;
+            border-left: 4px solid #d4af37;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+        }
+
+        .contact-item strong {
+            color: #d4af37;
+        }
+
+        .map-container {
+            height: 300px;
+            border-radius: 15px;
+            overflow: hidden;
+            border: 2px solid #d4af37;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+        }
+
+        .map-container iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        footer {
+            background-color: #3d2f26;
+            color: #f8f8f6;
+            text-align: center;
+            padding: 2rem 0;
+            border-top: 2px solid #d4af37;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .contact-info {
+                text-align: center;
+            }
+
+            .nav-links {
+                justify-content: center;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+                letter-spacing: 1px;
+            }
+
+            .hero p {
+                font-size: 1.1rem;
+            }
+
+            .about-content {
+                gap: 2rem;
+            }
+
+            .about-image,
+            .dental-office-image {
+                width: 100%;
+                max-width: 350px;
+            }
+
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .reviews-grid {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .review-card {
+                max-width: 400px;
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <a href="#" class="logo">🦷 San Gabriel Summit Dental</a>
+                <div class="contact-info">
+                    <div class="phone">📞 (555) 123-SMILE</div>
+                    <div>123 Main Street, Your City, ST 12345</div>
+                </div>
+            </div>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section id="home" class="hero">
+            <div class="container">
+                <h1>Your Dental Fitness Center</h1>
+                <p>The notion that a visit to the dentist is a traumatic experience comes to an end once you have experienced the quality and care that we extend to our patients.</p>
+                <a href="#contact" class="cta-button">Schedule Your Appointment</a>
+            </div>
+        </section>
+
+        <section id="services" class="services">
+            <div class="container">
+                <h2 class="section-title">Our Services</h2>
+                <div class="services-grid">
+                    <div class="service-card">
+                        <div class="service-icon">🦷</div>
+                        <h3>Preventative Care</h3>
+                        <p>Routine dental procedures such as cleanings and fluoride treatments aimed at preventing cavities and gum disease.</p>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-icon">🫧</div>
+                        <h3>Periodontal Care</h3>
+                        <p>Management of gum disease through procedures like scaling, root planing, and gum surgery to maintain gum health.</p>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-icon">✨</div>
+                        <h3>Restoration & Cosmetics</h3>
+                        <p>Procedures ranging from dental bonding to implants aimed at repairing damaged teeth and enhancing aesthetics.</p>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-icon">🔧</div>
+                        <h3>Orthodontics</h3>
+                        <p>Treatments such as braces and clear aligners to correct misaligned teeth and improve bite alignment.</p>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-icon">🏥</div>
+                        <h3>Oral Surgery & Implants</h3>
+                        <p>Surgical interventions including extractions, and wisdom teeth removal to address various dental and oral health issues.</p>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-icon">😴</div>
+                        <h3>Protective Devices</h3>
+                        <p>Nightguards to protect teeth from grinding and relieve jaw pains; and sleep apnea appliances to promote better breathing during sleep.</p>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-icon">🩺</div>
+                        <h3>Endodontic Treatment</h3>
+                        <p>Procedures like root canal therapy to treat infected tooth pulp and save the tooth from extraction.</p>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-icon">🚨</div>
+                        <h3>Emergency Services</h3>
+                        <p>Immediate care for urgent dental issues such as severe tooth pain, broken teeth, or oral injuries.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="reviews">
+            <div class="container">
+                <h2 class="section-title">Hear From Our Patients!</h2>
+                <div class="reviews-grid">
+                    <div class="review-card">
+                        <div class="stars">⭐⭐⭐⭐⭐</div>
+                        <p>"Dr. San Gabriel has done an excellent job educating me on all of the treatment options available to me."</p>
+                        <div class="reviewer">— BW</div>
+                    </div>
+                    <div class="review-card">
+                        <div class="stars">⭐⭐⭐⭐⭐</div>
+                        <p>"Dr. Dina is very caring, thorough and professional. She transformed my neglected mouth into a beautiful smile I am now very proud of."</p>
+                        <div class="reviewer">— DD</div>
+                    </div>
+                    <div class="review-card">
+                        <div class="stars">⭐⭐⭐⭐⭐</div>
+                        <p>"This is the only dental office I have ever left with a sense of relief and peace of mind."</p>
+                        <div class="reviewer">— EB</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="about" class="about">
+            <div class="container">
+                <div class="about-content">
+                    <div class="about-text">
+                        <h2>Welcome to Your Dental Fitness Center!</h2>
+                        <p>San Gabriel Summit Dental is a family-owned dental office established in 1997 and located in beautiful Downtown Burbank. At San Gabriel Summit Dental, quality and comfort are our top priorities. With over two decades of experience, Dr. Dina M. San Gabriel has been dedicated to delivering exceptional dental services to adults and children.</p>
+                        <p>Dr. San Gabriel provides personalized care, taking the time to understand and address each patient's needs and concerns thoroughly. Keeping patients well-informed is a cornerstone of her practice, ensuring a comfortable and informed experience for all.</p>
+                    </div>
+                    <div class="dental-office-image">
+                        🏥<br>
+                        <small style="font-size: 1rem; color: #f8f8f6;">Office Photo<br>Placeholder</small>
+                    </div>
+                    <div class="about-text about-doctor">
+                         <h2>About Dr. San Gabriel</h2>
+                        <p>Dr. Dina M. San Gabriel has been a cornerstone of Burbank's dental care since founding San Gabriel Summit Dental in 1997. With over two decades of experience, Dr. San Gabriel's commitment to excellence is evident in her gentle, family-oriented approach to dentistry.</p>
+                        <p>Beginning her career with distinction, she ranked among the Top 20 in the 1989 Philippines National Dental Board Exams. Continuously updating her skills with the latest techniques, Dr. San Gabriel ensures her patients receive the highest quality care possible.</p>
+                    </div>
+                    <div class="about-image">
+                        👨‍⚕️👩‍⚕️
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="contact">
+            <div class="container">
+                <h2 class="section-title">Contact Us</h2>
+                <div class="contact-grid">
+                    <div class="contact-info">
+                        <h3>Get in Touch</h3>
+                        <div class="contact-item">
+                            <strong>📞 Phone:</strong><br>
+                            (555) 123-SMILE<br>
+                            <small>Call us to schedule your appointment</small>
+                        </div>
+                        <div class="contact-item">
+                            <strong>📍 Address:</strong><br>
+                            123 Main Street<br>
+                            Your City, ST 12345
+                        </div>
+                        <div class="contact-item">
+                            <strong>🕒 Hours:</strong><br>
+                            Monday - Friday: 9:00 AM - 5:00 PM<br>
+                        </div>
+                        <div class="contact-item">
+                            <strong>✉️ Email:</strong><br>
+                            sangabrielsummitdental@gmail.com
+                        </div>
+                    </div>
+                    <div class="map-container">
+                        <iframe 
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3303.7889486837857!2d-118.31181489999999!3d34.1825934!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80c295505a28438f%3A0x4723b396cc06ff9a!2sSan%20Gabriel%20Summit%20Dental!5e0!3m2!1sen!2sus!4v1700000000000!5m2!1sen!2sus"
+                            allowfullscreen="" 
+                            loading="lazy" 
+                            referrerpolicy="no-referrer-when-downgrade"
+                            title="San Gabriel Summit Dental Location">
+                        </iframe>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 San Gabriel Summit Dental. All rights reserved. | S.G.S.D. Proudly Serving Burbank Since 1997</p>
+        </div>
+    </footer>
+</body>
+</html>
