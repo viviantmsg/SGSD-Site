@@ -82,6 +82,18 @@
             padding: 0.5rem 0;
         }
 
+        /* Universal link styling - white for all clickable links */
+        a {
+            color: #f8f8f6;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        a:hover {
+            color: #d4af37;
+        }
+
+        /* Navigation links already have specific styling, so they override this */
         .nav-links {
             display: flex;
             list-style: none;
@@ -466,7 +478,7 @@
             <div class="header-content">
                 <a href="#" class="logo"><img src="./images/BWLogo-SGSD.png" alt="San Gabriel Summit Dental Logo"> San Gabriel Summit Dental</a>
                 <div class="contact-info">
-                    <div class="phone">📞 (818) 557-0964</div>
+                    <div class="phone">📞 <a href="tel:+18185570964">(818) 557-0964</a></div>
                     <div>255 E Orange Grove Ave # B, Burbank, CA 91502</div>
                 </div>
             </div>
@@ -592,7 +604,7 @@
                         <h3>Get in Touch</h3>
                         <div class="contact-item">
                             <strong>📞 Phone:</strong><br>
-                            (818) 557-0964<br>
+                            <a href="tel:+18185570964">(818) 557-0964</a><br>
                             <small>Call us to schedule your appointment</small>
                         </div>
                         <div class="contact-item">
@@ -606,7 +618,7 @@
                         </div>
                         <div class="contact-item">
                             <strong>✉️ Email:</strong><br>
-                            sangabrielsummitdental@gmail.com
+                            <a href="mailto:sangabrielsummitdental@gmail.com">sangabrielsummitdental@gmail.com</a>
                         </div>
                     </div>
                     <div class="map-container">
