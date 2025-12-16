@@ -173,14 +173,15 @@
         }
 
         .services-grid {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 2rem;
             margin-top: 2rem;
         }
 
         .service-card {
+            flex: 0 0 350px;
+            max-width: 350px;
             background: #000000;
             padding: 2rem;
             border-radius: 15px;
@@ -270,9 +271,64 @@
             letter-spacing: 1px;
         }
 
-        .about {
+        .info-section {
             padding: 4rem 0;
             background-color: #3d2f26;
+        }
+
+        .info-content {
+            display: flex;
+            align-items: center;
+            gap: 3rem;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .logo-container {
+            flex-shrink: 0;
+        }
+
+        .round-logo {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #000000, #3d2f26);
+            border: 3px solid #d4af37;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(212, 175, 55, 0.3);
+        }
+
+        .round-logo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .info-text {
+            flex: 1;
+        }
+
+        .info-text h2 {
+            font-family: 'Copperplate', 'Copperplate Gothic Light', fantasy;
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            color: #d4af37;
+            letter-spacing: 1.5px;
+        }
+
+        .info-text p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 1rem;
+            color: #f8f8f6;
+        }
+
+        .about {
+            padding: 4rem 0;
+            background-color: #000000;
         }
 
         .about-content {
@@ -354,7 +410,7 @@
 
         .contact {
             padding: 4rem 0;
-            background-color: #000000;
+            background-color: #3d2f26;
         }
 
         .contact-grid {
@@ -375,7 +431,7 @@
         .contact-item {
             margin-bottom: 1.5rem;
             padding: 1rem;
-            background-color: #3d2f26;
+            background-color: #000000;
             border-radius: 10px;
             border-left: 4px solid #d4af37;
             box-shadow: 0 2px 10px rgba(0,0,0,0.3);
@@ -400,7 +456,7 @@
         }
 
         footer {
-            background-color: #3d2f26;
+            background-color: #000000;
             color: #f8f8f6;
             text-align: center;
             padding: 2rem 0;
@@ -453,12 +509,29 @@
                 height: 250px;
             }
 
+            .info-content {
+                flex-direction: column;
+                text-align: center;
+                gap: 2rem;
+            }
+
+            .round-logo {
+                width: 150px;
+                height: 150px;
+            }
+
             .contact-grid {
                 grid-template-columns: 1fr;
             }
 
             .services-grid {
-                grid-template-columns: 1fr;
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .service-card {
+                max-width: 400px;
+                width: 100%;
             }
 
             .reviews-grid {
@@ -574,6 +647,23 @@
             </div>
         </section>
 
+        <section class="info-section">
+            <div class="container">
+                <div class="info-content">
+                    <div class="logo-container">
+                        <div class="round-logo">
+                            <img src="./images/BWLogo-SGSD.png" alt="San Gabriel Summit Dental Logo">
+                        </div>
+                    </div>
+                    <div class="info-text">
+                        <h2>Our Commitment to Excellence</h2>
+                        <p>At San Gabriel Summit Dental, we believe in providing comprehensive dental care that goes beyond just treating teeth. Our approach focuses on building lasting relationships with our patients and creating a comfortable, welcoming environment where dental anxiety becomes a thing of the past.</p>
+                        <p>With state-of-the-art technology and a gentle touch, we're dedicated to helping you achieve optimal oral health and the confident smile you deserve.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <section id="about" class="about">
             <div class="container">
                 <div class="about-content">
@@ -644,4 +734,3 @@
 </body>
 
 </html>
-
